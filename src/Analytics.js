@@ -14,6 +14,7 @@ class AnalyticsPage extends React.Component{
         'iptc_chart':{},
         'top_keyword_graph':{}, 'exception': false, 'exception_val': '',
         'positive_reviews':[], 'negative_reviews':[], 'top_keywords_chart':{},
+        'positive_tweets':[], 'negative_tweets':[],
         'type': ''};
         this.loading = true;
         this.getReviews();
@@ -49,8 +50,8 @@ class AnalyticsPage extends React.Component{
                             'big5_traits_graph':JSON.parse(data['big5_traits_val_graph']),
                             'star_graph':JSON.parse(data['star_dist']),
                             'top_keyword_graph':JSON.parse(data['top_keywords']),
-                            'positive_reviews': data['positive_reviews'],
-                            'negative_reviews': data['negative_reviews'],
+                            'positive_tweets': data['positive_reviews'],
+                            'negative_tweets': data['negative_reviews'],
                             'type': data['type'],
                             'exception': false
                         });
@@ -104,6 +105,12 @@ class AnalyticsPage extends React.Component{
                     {this.state.positive_reviews[0] &&
                         <Table positive_reviews={this.state.positive_reviews}
                                 negative_reviews={this.state.negative_reviews}
+                                type="reviews"
+                                />}
+                    {this.state.positive_tweets[0] &&
+                        <Table positive_reviews={this.state.positive_tweets}
+                                negative_reviews={this.state.negative_tweets}
+                                type="tweets"
                                 />}
                     <div className="card_row">
                         {this.state.big5_graph['data'] && 
@@ -129,8 +136,8 @@ class AnalyticsPage extends React.Component{
                         {this.state.star_graph['data'] &&
                             <Graph data={this.state.star_graph['data']} 
                                 layout={this.state.star_graph['layout']}
-                                heading = "Review Stars"
-                                desc = "The pie chart shown is a visual representation of how users have rated your product online."
+                                heading = "Likes"
+                                desc = "The line chart shown is a visual representation of how users have liked your tweets"
                             />}
                         {this.state.top_keyword_graph['data'] && 
                             <Graph data={this.state.top_keyword_graph['data']} 
