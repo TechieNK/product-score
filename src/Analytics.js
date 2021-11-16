@@ -42,7 +42,7 @@ class AnalyticsPage extends React.Component{
                     let data = response.data;
                     console.log('Success');
                     this.loading = false;
-                    if(data['type'] === 'atlassian')
+                    if(data['type'] === 'twitter')
                     {
                         this.setState({
                             'big5_graph':JSON.parse(data['big5_traits_graph']), 
