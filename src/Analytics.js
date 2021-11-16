@@ -28,7 +28,7 @@ class AnalyticsPage extends React.Component{
 
         
         //com.atlassian.confluence.plugins.confluence-questions 
-        this.url = 'https://sentimentai.herokuapp.com/analyze?key='.concat(this.app_name);
+        this.url = 'https://jayanth-api.herokuapp.com/analyze?key='.concat(this.app_name);
         await axios.get(this.url, requestOptions)
             .then((response)=>{
                 if('exception' in response.data)
