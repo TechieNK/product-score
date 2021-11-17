@@ -32,7 +32,7 @@ class Home extends React.Component {
         <p className="text">An one-stop solution for analysing your product reviews</p>
         <br/><hr></hr>
         <form onSubmit={this.onSubmit}>
-          <input type="text" value={this.state.formData} onChange={this.onChange} className="input_field" placeholder="Enter the Atlassian Marketplace package name  / Google Play URL / App Store URL here"/>&nbsp;&nbsp;          <button type="submit" className="submit_btn">ANALYZE</button> 
+          <input type="text" value={this.state.formData} onChange={this.onChange} className="input_field" placeholder="Enter the twitter profile URL / Google Play URL / App Store URL here"/>&nbsp;&nbsp;          <button type="submit" className="submit_btn">ANALYZE</button> 
         </form> 
       </div>
       {this.state.formState && <AnalyticsPage app_name={this.app_name} />}
